@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    Plane plane;
     // Start is called before the first frame update
     void Start()
     {
-        
+        plane = new Plane(new Vector3(0, 0, 1), 7.0f);
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class FollowMouse : MonoBehaviour
         //p.z = transform.position.z;
         //Vector3 pos = Camera.main.ScreenToWorldPoint(p);
         //transform.position = pos;
-        Plane plane = new Plane(new Vector3(0,0,1), -7.0f);
+        
         Ray ray  = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         float disToPlane;
@@ -29,7 +30,7 @@ public class FollowMouse : MonoBehaviour
             cp = ray.GetPoint(disToPlane);
 
         }
-        Debug.Log(cp);
+      //  Debug.Log(cp);
         transform.position = cp;
        // transform.position = new Vector3(cp.x, cp.y, transform.position.z);
     }

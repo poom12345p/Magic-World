@@ -4,17 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ProcessBar : MonoBehaviour {
     Quaternion oringinRotation;
-   [HideInInspector] public Image gaugeImage;
+    [SerializeField] Image gaugeImage;
     [Range(0f,1f)]
     public float maxhpGaugue;
     [Range(0f, 1f)]
-    public float changeSpeed=0.4f;
+    public float changeSpeed;
     float currentGaugue;
     float realGaugue;
     // Use this for initialization
     void Start () {
         oringinRotation = transform.rotation;
-        gaugeImage =  GetComponent<Image>();
 	}
 	
 	// Update is called once per frame
@@ -50,6 +49,7 @@ public class ProcessBar : MonoBehaviour {
         {
             realGaugue = 0;
         }
+        
     }
 
     public void updateGaugeImediate(float max, float cur)

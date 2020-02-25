@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        LoadScence("SampleScene");
     }
     public void LoadScence(string scenceName)
     {
