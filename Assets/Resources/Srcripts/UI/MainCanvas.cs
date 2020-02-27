@@ -1,14 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class StageController : MonoBehaviour
+public class MainCanvas : MonoBehaviour
 {
-
-    struct stage{
-
-    }
     // Start is called before the first frame update
     void Start()
     {

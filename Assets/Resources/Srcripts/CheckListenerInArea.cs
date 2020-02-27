@@ -21,7 +21,7 @@ public class CheckListenerInArea : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log(collision + " is Enter");
             foreach(string i in listenerTags)
@@ -35,7 +35,7 @@ public class CheckListenerInArea : MonoBehaviour
             }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.GetComponent<Listener>() != null)
         {

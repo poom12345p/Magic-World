@@ -17,7 +17,7 @@ public class Damage : MonoBehaviour
     protected Collider myCol;
     public Unit ownerUnit;
     public List<Unit> takenUnit = new List<Unit>();
-    public Element damageElement;
+    public Element element;
     //public bool isDestroyafterDoneDamage = false;
     public float destoryDelay;
     public string[] receiverTag;
@@ -38,6 +38,7 @@ public class Damage : MonoBehaviour
     public void SetUp()
     {
         myCol = gameObject.GetComponent<Collider>();
+        Debug.Log(myCol);
         if (myCol.enabled)
         {
             deActiveHitbox();
@@ -72,6 +73,10 @@ public class Damage : MonoBehaviour
     {
         return takenUnit.Contains(unit);
     }
+    public virtual void EndDamaging()
+    {
+        deActiveHitbox();
+    }
 
     public void deActiveHitbox()
     {
@@ -80,6 +85,10 @@ public class Damage : MonoBehaviour
         
     }
 
+    public virtual void StartDamaging()
+    {
+        activeHitbox();
+    }
 
     public void activeHitbox()
     {
@@ -107,6 +116,12 @@ public class Damage : MonoBehaviour
             }
         }
         return false;
+    }
+    public DamageData GetDamageData()
+    {
+        DamageData data = new DamageData(this);
+        return data;
+
     }
 
 

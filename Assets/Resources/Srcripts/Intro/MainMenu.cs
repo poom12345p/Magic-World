@@ -23,6 +23,12 @@ public class MainMenu : MonoBehaviour
     {
         LoadScence("SampleScene");
     }
+    public void LoadGame()
+    {
+        GameData curData = DataController.GetSave();
+        LoadScence(curData.scenceName);
+    }
+
     public void LoadScence(string scenceName)
     {
         //Fade

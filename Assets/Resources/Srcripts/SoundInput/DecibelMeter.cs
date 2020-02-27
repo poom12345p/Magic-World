@@ -8,6 +8,7 @@ public class DecibelMeter : MonoBehaviour
     public float RmsValue;
     public float DbValue;
     public float PitchValue;
+    public float Loudness;
 
     private const int QSamples = 1024;
     private const float RefValue = 0.1f;
@@ -39,6 +40,8 @@ public class DecibelMeter : MonoBehaviour
 
     void AnalyzeSound()
     {
+        Loudness = MicInput.MicLoudness;
+
         GetComponent<AudioSource>().GetOutputData(_samples, 0); // fill array with samples
         int i;
         float sum = 0;

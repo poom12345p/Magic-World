@@ -40,9 +40,9 @@ public class VoiceRegognite : MonoBehaviour
         //speaker.SendToAll(speech.text);
     }
 
-    public void GetInstance()
+    public List<WordList> GetWordSet()
     {
-
+        return wordSetLists;
     }
     public void AddWordList(WordList wl)
     {

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public enum Element
 {
-    FIRE,WATER,EARTH,WIND
+    NONE,HOLY,FIRE,WATER,EARTH,WIND
 }

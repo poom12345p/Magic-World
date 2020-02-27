@@ -23,14 +23,14 @@ public class OneHitDamage : Damage
         if (!isActive)
         {
             isActive = true;
-            base.activeHitbox();
+            base.StartDamaging();
             Invoke("EndAttack", disableDelay);
         }
     }
 
     public void EndAttack()
     {
-        base.deActiveHitbox();
+        base.EndDamaging();
         isActive = false;
     }
 
